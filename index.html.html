@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahendran T | Junior .NET Developer</title>
+  <meta name="description"
+    content="Portfolio of Mahendran T, a Junior .NET Developer based in Coimbatore, specializing in ASP.NET, C#, and Azure." />
+  <meta name="author" content="Mahendran T" />
+
+  <meta property="og:title" content="Mahendran T | Junior .NET Developer" />
+  <meta property="og:description"
+    content="Portfolio of Mahendran T, a Junior .NET Developer based in Coimbatore, specializing in ASP.NET, C#, and Azure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./portfoliostyles.css">
+
+  <style>
+    /* Base Styles & Variables */
+    :root {
+      --primary: #3b82f6;
+      --primary-dark: #2563eb;
+      --primary-light: #60a5fa;
+      --secondary: #f1f5f9;
+      --dark: #0f172a;
+      --gray-900: #1f2937;
+      --gray-800: #374151;
+      --gray-700: #4b5563;
+      --gray-600: #6b7280;
+      --gray-500: #9ca3af;
+      --gray-400: #d1d5db;
+      --gray-300: #e5e7eb;
+      --gray-200: #f1f5f9;
+      --gray-100: #f9fafb;
+      --white: #ffffff;
+      --radius: 0.5rem;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      --font-heading: 'Poppins', sans-serif;
+    }
+
+    /* Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-800);
+      background-color: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-heading);
+      line-height: 1.2;
+      margin-bottom: 0.5em;
+      color: var(--gray-900);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: var(--primary-dark);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Utility Classes */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .bg-white {
+      background-color: var(--white);
+    }
+
+    .bg-light {
+      background-color: var(--gray-200);
+    }
+
+    .card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-block {
+      width: 100%;
+    }
+
+    .badge,
+    .skill-pill {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border-radius: 9999px;
+      background-color: var(--gray-200);
+      color: var(--gray-700);
+      margin: 0.25rem;
+      border: 1px solid var(--gray-300);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+
+    .section-subtitle {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--gray-600);
+    }
+
+    .section-icon {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Header & Navigation */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 1rem 0;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .header.scrolled {
+      background-color: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 0.75rem 0;
+    }
+
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-900);
+    }
+
+    .header.scrolled .logo {
+      color: var(--gray-900);
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      padding: 0.5rem;
+      color: var(--gray-800);
+      font-weight: 500;
+      font-size: 0.875rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: var(--gray-800);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(to bottom right, #EBF4FF, #F9FAFB);
+      padding-top: 5rem;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .hello {
+      color: var(--primary);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-title {
+      font-size: 1.5rem;
+      color: var(--gray-700);
+      margin-bottom: 1rem;
+    }
+
+    .description {
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-image {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(to right, var(--primary), #60a5fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid var(--white);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .scroll-prompt {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: var(--gray-500);
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0) translateX(-50%);
+      }
+
+      40% {
+        transform: translateY(-20px) translateX(-50%);
+      }
+
+      60% {
+        transform: translateY(-10px) translateX(-50%);
+      }
+    }
+
+    /* About Section */
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .about-img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .personal-info {
+      margin-top: 2rem;
+    }
+
+    .personal-info h4 {
+      margin-bottom: 1rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .info-item p {
+      margin-bottom: 0.5rem;
+    }
+
+    .info-item p span {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-image {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-image img:hover {
+      transform: scale(1.1);
+    }
+
+    .project-body {
+      padding: 1.5rem;
+      flex: 1;
+    }
+
+    .project-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .project-description {
+      color: var(--gray-600);
+    }
+
+    .project-footer {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      padding: 1.5rem;
+    }
+
+    .skill-category {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Experience Section */
+    .experience-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .experience-card {
+      padding: 2rem;
+    }
+
+    .experience-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .experience-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-date {
+      font-size: 0.875rem;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+
+    .experience-company {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .company-name,
+    .company-location {
+      font-size: 0.875rem;
+      color: var(--gray-600);
+    }
+
+    .experience-list {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    .experience-list li {
+      margin-bottom: 0.75rem;
+      color: var(--gray-700);
+    }
+
+    /* Certifications Section */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .certification-card {
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .certification-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.25rem 0.5rem;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      border-radius: 0.25rem;
+    }
+
+    .certification-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .certification-issuer {
+      color: var(--gray-600);
+      margin-bottom: 1rem;
+    }
+
+    .certification-credential {
+      color: var(--gray-500);
+      font-size: 0.875rem;
+    }
+
+    /* Education Section */
+    .education-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .education-card {
+      padding: 1.5rem;
+    }
+
+    .education-header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .education-degree {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .education-date {
+      font-size: 0.875rem;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .education-institution {
+      color: var(--gray-600);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .education-grade {
+      font-weight: 500;
+    }
+
+    /* Contact Section */
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .contact-item i {
+      color: var(--primary);
+      font-size: 1.25rem;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+    }
+
+    .social-links h4 {
+      margin-bottom: 0.75rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--gray-100);
+      border-radius: 50%;
+      color: var(--gray-600);
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      background-color: var(--gray-200);
+      color: var(--primary);
+    }
+
+    .contact-form {
+      padding: 2rem;
+    }
+
+    .contact-form h3 {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      font-family: inherit;
+      font-size: 1rem;
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      background-color: var(--white);
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: var(--gray-900);
+      padding: 3rem 0;
+      color: var(--white);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-logo span {
+      color: var(--primary);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-links a {
+      color: var(--gray-300);
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-copyright {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: var(--gray-400);
+      font-size: 0.875rem;
+    }
+
+    .made-with {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .made-with i {
+      color: #ff6b6b;
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+      box-shadow: var(--shadow-md);
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Media Queries */
+    @media (max-width: 992px) {
+
+      .hero-text,
+      .hero-image {
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about-image {
+        margin: 0 auto;
+      }
+
+      .info-grid {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: var(--shadow);
+        padding: 2rem 0;
+        gap: 2rem;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .nav-link {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .name {
+        font-size: 2.5rem;
+      }
+
+      .job-title {
+        font-size: 1.25rem;
+      }
+
+      .experience-title,
+      .experience-company {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .experience-date,
+      .company-location {
+        margin-top: 0.25rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .section {
+        padding: 3rem 0;
+      }
+
+      .name {
+        font-size: 2rem;
+      }
+
+      .profile-image {
+        width: 250px;
+        height: 250px;
+      }
+
+      .form-group-row {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#home" class="logo">Mahendran<span>.T</span></a>
+
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <p class="hello">Hello, I'm</p>
+          <h1 class="name">Mahendran T</h1>
+          <h2 class="job-title">Junior .NET Developer</h2>
+          <p class="description">Building scalable web apps using .NET & Azure, focused on creating efficient solutions
+            for real-world problems.</p>
+          <div class="hero-buttons">
+            <a href="./Static/MAHENDRAN_T_Resume.pdf" class="btn btn-primary">
+              Download Resume
+              <i class="fas fa-download"></i>
+            </a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-image">
+            <!-- Replace with actual image when available -->
+            <img src="./Static/Profile Image.jpeg" alt="Mahendran T">
+          </div>
+        </div>
+      </div>
+      <div class="scroll-prompt">
+        <a href="#about">
+          <span>Scroll Down</span>
+          <i class="fas fa-chevron-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <i class="fas fa-user section-icon"></i>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-content">
+        <div class="about-image">
+          <div class="card">
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Developer coding" class="about-img">
+          </div>
+        </div>
+        <div class="about-text">
+          <h3>Who am I?</h3>
+          <p>I'm Mahendran T, a passionate Junior .NET Developer with a strong foundation in
+            back-end development. My journey in technology is driven by a genuine interest in creating real-world
+            software solutions that make a difference.</p>
+          <p>My approach to development combines technical expertise with a commitment to writing clean, maintainable
+            code. I thrive in collaborative environments where I can contribute meaningfully to projects while
+            continuously expanding my skillset.</p>
+          <p>I'm particularly focused on growth in a dynamic environment where I can apply my knowledge of C#, ASP.NET,
+            SQL, and other technologies to build scalable applications. I believe in the power of continuous learning
+            and adaptability in the ever-evolving tech landscape.</p>
+
+          <div class="personal-info">
+            <h4>Personal Information</h4>
+            <div class="info-grid">
+              <div class="info-item">
+                <p><span>Name:</span> Mahendran T</p>
+                <p><span>Location:</span> Coimbatore, India</p>
+              </div>
+              <div class="info-item">
+                <p><span>Email:</span> mahendran070903@gmail.com</p>
+                <p><span>Open To:</span> Full-time opportunities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <i class="fas fa-laptop-code section-icon"></i>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-subtitle">Featured academic projects that showcase my skills and approach to problem-solving.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card card">
+          <div class="project-image">
+            <img
+              src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Blood Transfer Project">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Enhancing Emergency Medical Services Through Blood Transfer Facilities</h3>
+            <p class="project-description">A comprehensive system designed to streamline blood donation, storage, and
+              transfer processes for emergency medical services.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="badge">Java</span>
+              <span class="badge">Android Studio</span>
+              <span class="badge">SQL Server</span>
+              <span class="badge">Bootstrap</span>
+              <span class="badge">Entity Framework</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card card">
+          <div class="project-image">
+            <img
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Street Hawker Project">
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Integrated Street Hawker Management System</h3>
+            <p class="project-description">A platform connecting street vendors with customers, providing location
+              tracking, inventory management, and digital payment solutions.</p>
+          </div>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="badge">PHP</span>
+              <span class="badge">HTML</span>
+              <span class="badge">CSS</span>
+              <span class="badge">SQL</span>
+              <span class="badge">JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <i class="fas fa-cogs section-icon"></i>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-subtitle">My technical toolkit and areas of expertise</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card card">
+          <h3 class="skill-category">Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">C</span>
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
+            <span class="skill-pill">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card card">
+          <h3 class="skill-category">Frameworks</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">ASP.NET MVC</span>
+            <span class="skill-pill">ASP.NET Core</span>
+            <span class="skill-pill">.NET Framework</span>
+            <span class="skill-pill">.NET Core</span>
+            <span class="skill-pill">Entity Framework</span>
+            <span class="skill-pill">Bootstrap</span>
+            <span class="skill-pill">jQuery</span>
+          </div>
+        </div>
+
+        <div class="skill-card card">
+          <h3 class="skill-category">Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">Visual Studio</span>
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">Azure DevOps</span>
+            <span class="skill-pill">SQL Server Management Studio</span>
+          </div>
+        </div>
+
+        <div class="skill-card card">
+          <h3 class="skill-category">Database</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">SQL Server</span>
+            <span class="skill-pill">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card card">
+          <h3 class="skill-category">Cloud</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">Microsoft Azure</span>
+            <span class="skill-pill">Azure App Service</span>
+            <span class="skill-pill">Azure SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card card">
+          <h3 class="skill-category">Concepts</h3>
+          <div class="skill-tags">
+            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">MVC Architecture</span>
+            <span class="skill-pill">SOLID Principles</span>
+            <span class="skill-pill">Object-Oriented Programming</span>
+            <span class="skill-pill">Dependency Injection</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <i class="fas fa-briefcase section-icon"></i>
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">My professional journey and internship experience</p>
+      </div>
+
+      <div class="experience-container">
+        <div class="experience-card card">
+          <div class="experience-header">
+            <h3 class="experience-title">Junior .NET Developer Intern</h3>
+            <span class="experience-date">May 2024 - Present</span>
+            <div class="experience-company">
+              <span class="company-name">HANA POS</span>
+              <span class="company-location">Coimbatore, India</span>
+            </div>
+          </div>
+          <div class="experience-body">
+            <ul class="experience-list">
+              <li>Developing and maintaining Web API solutions using ASP.NET Core and C#, focusing on creating efficient
+                and scalable endpoints.</li>
+              <li>Working on backend functionality with SQL Server, writing complex queries to retrieve and manipulate
+                data efficiently.</li>
+              <li>Collaborating with cross-functional teams to implement new features and troubleshoot issues in
+                existing applications.</li>
+              <li>Applying MVC architecture principles to create maintainable and well-structured code.</li>
+              <li>Participating in code reviews and implementing feedback to improve code quality and follow best
+                practices.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section bg-light">
+    <div class="container">
+      <div class="section-header">
+        <i class="fas fa-graduation-cap section-icon"></i>
+        <h2 class="section-title">Education</h2>
+        <p class="section-subtitle">My academic background and qualifications</p>
+      </div>
+
+      <div class="education-container">
+        <div class="education-card card">
+          <div class="education-header">
+            <h3 class="education-degree">Bachelor of Engineering in Computer Science</h3>
+            <span class="education-date">2020 - 2024</span>
+            <p class="education-institution">Sri Krishna College of Engineering and Technology, Coimbatore, India</p>
+            <p class="education-grade">CGPA: 8.5/10</p>
+          </div>
+        </div>
+
+        <div class="education-card card">
+          <div class="education-header">
+            <h3 class="education-degree">Higher Secondary Education</h3>
+            <span class="education-date">2018 - 2020</span>
+            <p class="education-institution">ABC Higher Secondary School, Coimbatore, India</p>
+            <p class="education-grade">CGPA: 90%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section bg-white">
+    <div class="container">
+      <div class="section-header">
+        <i class="fas fa-envelope section-icon"></i>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">Feel free to reach out for opportunities or just to say hello!</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Get In Touch</h3>
+          <p>I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll get
+            back to you as soon as possible.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:mahendran070903@gmail.com">mahendran070903@gmail.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+918838039163">+91 88380 39163</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Coimbatore, Tamil Nadu, India</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <h4>Connect With Me</h4>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/mahendran-t-92478025a" target="_blank" rel="noopener noreferrer"
+                class="social-icon">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="https://github.com/Mahet07" target="_blank" rel="noopener noreferrer" class="social-icon">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form card">
+          <h3>Send Me a Message</h3>
+          <form id="contactForm">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this regarding?" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#home" class="footer-logo">Mahendran<span>.T</span></a>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; <span id="current-year"></span> Mahendran T. All rights reserved.</p>
+          <p class="made-with">
+            <i class="fas fa-heart"></i>
+            Built with HTML, CSS & JavaScript
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Current Year for Footer
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector('.hamburger');
+      const navMenu = document.querySelector('.nav-menu');
+
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu when clicking a nav link
+      document.querySelectorAll('.nav-link').forEach(link =>
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        })
+      );
+
+      // Header scroll effect
+      const header = document.querySelector('.header');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Back to top button
+      const backToTop = document.querySelector('.back-to-top');
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+
+      // Form submission
+      const contactForm = document.getElementById('contactForm');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          // Get form data
+          const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value
+          };
+
+          // Simulate form submission (in a real application, you would send this to your backend)
+          console.log('Form submitted with data:', formData);
+
+          // Show success message (you might want to add a proper toast/notification system)
+          alert('Thank you for your message! I will get back to you soon.');
+
+          // Reset form
+          contactForm.reset();
+        });
+      }
+
+      // Add smooth scrolling to all links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70, // Offset for fixed header
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
